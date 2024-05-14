@@ -1,0 +1,64 @@
+<html>
+<head>
+    <link rel="stylesheet" href="..\styles.css">
+</head>
+<body class="stardew-background">
+    <svg id="fader"></svg>
+
+    <img id="back-arrow" src="..\back-arrow.png" alt="Back">
+    
+    <canvas id="stardew-canvas">
+        <img id="sprite" class="stardew-sprite" src="stardew-spritesheet.png" draggable="false" />
+    </canvas>
+    
+    <canvas id="stardew-tree-canvas">
+      <img id="tree-sprite" class="stardew-tree-sprite" src="stardew-tree-spritesheet.png" draggable="false" />
+    </canvas>
+
+    <div id="stardew-item-div">
+      <img id="item-sprite" class="stardew-item-sprite" src="stardew-item.png" draggable="false" />
+      <div id="item-count-text-outline"></div>
+      <div id="item-count-text-inside"></div>
+    </div>
+    <!-- <div id="text-overlay">
+      <div class="stardew-number num-0">
+    </div>
+
+    <script>
+      function displayNumber(number) {
+        const numberString = number.toString();
+        const textOverlay = document.getElementById('text-overlay');
+        textOverlay.innerHTML = ''; // Clear previous content
+    
+        for (let char of numberString) {
+          const numDiv = document.createElement('div');
+          numDiv.className = `stardew-number num-${char}`;
+          textOverlay.appendChild(numDiv);
+        }
+      }
+    
+      // Example usage:
+      displayNumber(10234);
+    </script> -->
+
+    <!-- <img id="tree" class="stardew-tree" src="stardew-tree.png" draggable="false" /> -->
+
+    <!-- <script>
+        window.onload = function() {
+          var backgroundImage = new Image();
+          backgroundImage.onload = function() {
+            var height = this.naturalHeight;
+            var width = this.naturalWidth;
+            var canvas = document.getElementById('stardew-canvas');
+        
+            // Assuming the background and canvas should have the same width to height ratio
+            canvas.style.width = (width / height * 26) + 'vmin';
+            canvas.style.height = '26vmin';
+          };
+          backgroundImage.src = 'stardew/stardew-background.jpg';
+        };
+        </script> -->
+    
+  <script src="stardew.js"></script>
+</body>
+</html>
