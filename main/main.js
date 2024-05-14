@@ -1,7 +1,7 @@
 // Image scroll & parallax effect
 const track = document.getElementById("menu-image-track");
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+const handleOnDown = e => track.dataset.mouseDownAt = e.clientX || e.touches[0].clientX;
 
 const handleOnUp = () => {
   track.dataset.mouseDownAt = "0";  
@@ -34,7 +34,8 @@ const handleOnMove = e => {
 const handleOnTouchMove = e => {
   if(track.dataset.mouseDownAt === "0") return;
   
-  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+  const clientX = e.touches[0].clientX;
+  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - clientX,
         maxDelta = window.innerWidth;
   
   const percentage = (mouseDelta / maxDelta) * -100,
@@ -55,7 +56,7 @@ window.ontouchstart = e => handleOnDown(e.touches[0]);
 window.onmouseup = e => handleOnUp(e);
 window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
-window.ontouchmove = e => handleOnTouchMove(e.touches[0]);
+window.ontouchmove = e => handleOnTouchMove(e);
 
 
 

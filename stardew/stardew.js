@@ -56,6 +56,8 @@ function animate() {
 
 window.onmousedown = e => handleOnDown(e);
 window.onmouseup = e => handleOnUp(e);
+window.ontouchstart = e => handleOnDown(e);
+window.ontouchend = e => handleOnUp(e);
 
 const handleOnDown = e => {
     isMouseDown = true;
