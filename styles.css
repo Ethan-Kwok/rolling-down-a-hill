@@ -243,11 +243,11 @@ button:hover {
 
 @font-face {
   font-family: stardew-number-font-outline;
-  src: url(ServiceGamesOldskoolOutline-XG82.ttf);
+  src: url(main/ServiceGamesOldskoolOutline-XG82.ttf);
 }
 @font-face {
   font-family: stardew-number-font-inside;
-  src: url(ServiceGamesOldskool-LVDy.ttf);
+  src: url(main/ServiceGamesOldskool-LVDy.ttf);
 }
 #item-count-text-outline {
   position: absolute;

@@ -31,12 +31,31 @@ const handleOnMove = e => {
   }
 }
 
+const handleOnTouchMove = e => {
+  if(track.dataset.mouseDownAt === "0") return;
+  
+  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+        maxDelta = window.innerWidth;
+  
+  const percentage = (mouseDelta / maxDelta) * -100,
+        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+  
+  track.dataset.percentage = nextPercentage;
+  
+  track.style.transform = `translate(${nextPercentage}%, -50%)`;
+  
+  for (const image of track.getElementsByClassName("menu-image")) {
+    image.style.objectPosition = `${100 + nextPercentage}% center`
+  }
+}
+
 window.onmousedown = e => handleOnDown(e);
 window.ontouchstart = e => handleOnDown(e.touches[0]);
 window.onmouseup = e => handleOnUp(e);
 window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
-window.ontouchmove = e => handleOnMove(e.touches[0]);
+window.ontouchmove = e => handleOnTouchMove(e.touches[0]);
 
 
 
