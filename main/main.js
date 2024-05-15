@@ -94,6 +94,12 @@ function changePage(imageIndex) {
         window.location.href = '../tortilla-slap/tortilla.html';
       }, delay);
       break;
+    case 5:
+      fadeOutPage()
+      setTimeout(function() {
+        window.location.href = '../coin/coin.html';
+      }, delay);
+      break;
     default:
       alert('Error: no page corresponding to image!');
   }

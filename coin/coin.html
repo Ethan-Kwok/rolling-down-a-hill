@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="coin-page">
+    <svg id="fader"></svg>
+
+    <img id="back-arrow" src="..\back-arrow.png" alt="Back">
+
+    <div class="coin-flip-container">
+        <div class="coin-header">
+            <h3>Flip a coin</h3>
+        </div>
+        <div class="coin-content">
+            <canvas id="coin-canvas">
+                <img id="coin" class="coin-image" src="coin-sheet.png" alt="Coin" id="coin">
+            </canvas>
+            <p id="result">Heads or tails?</p>
+        </div>
+        <div class="coin-button-container">
+            <button id="heads-button" class="coin-button">Heads</button>
+            <button id="tails-button" class="coin-button">Tails</button>
+        </div>
+    </div>
+
+    <script src="coin.js"></script>
+</body>
+</html>
