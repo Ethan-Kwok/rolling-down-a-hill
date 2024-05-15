@@ -16,9 +16,11 @@ let isHeads = true;
 let numHalfSpins = 0;
 let isSpinning = false;
 
-ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-ctx.drawImage(coinImg, 0, frameX * coinImageHeight, coinImageWidth, coinImageHeight, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-            
+function drawInitialFrame() {
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    ctx.drawImage(coinImg, 0, frameX * coinImageHeight, coinImageWidth, coinImageHeight, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+}
+        
 function animate(numTimesToSpin, numRotations, spinCounterClockwise) {
     return function() {
         if (numHalfSpins < numTimesToSpin) {
@@ -92,6 +94,16 @@ document.getElementById('tails-button').addEventListener('click', function() {
     spinCoin(false);
 });
 
+// Ensure that the tree and player sprites are visible when opening
+coinImg.onload = () => {
+    drawInitialFrame();
+};
+
+if (coinImg.complete) {
+    drawInitialFrame();
+} else {
+    coinImg.onload = drawInitialFrame;
+}
 
 
 

@@ -24,6 +24,13 @@ let isMouseDown = false;
 const sprite = document.getElementById('sprite');
 const treeSprite = document.getElementById('tree-sprite');
 
+function drawInitialFrame() {
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    ctx.drawImage(sprite, frameX * spriteWidth, 0, spriteWidth, spriteHeight, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    treeCtx.clearRect(0, 0, TREE_CANVAS_WIDTH, TREE_CANVAS_HEIGHT);
+    treeCtx.drawImage(treeSprite, frameX * treeSpriteWidth, 0, treeSpriteWidth, treeSpriteHeight, 0, 0, TREE_CANVAS_WIDTH, TREE_CANVAS_HEIGHT);
+}
+
 function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     ctx.drawImage(sprite, frameX * spriteWidth, 0, spriteWidth, spriteHeight, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -71,12 +78,19 @@ const handleOnUp = e => {
 }
 
 // Ensure that the tree and player sprites are visible when opening
-ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-ctx.drawImage(sprite, frameX * spriteWidth, 0, spriteWidth, spriteHeight, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-treeCtx.clearRect(0, 0, TREE_CANVAS_WIDTH, TREE_CANVAS_HEIGHT);
-treeCtx.drawImage(treeSprite, frameX * treeSpriteWidth, 0, treeSpriteWidth, treeSpriteHeight, 0, 0, TREE_CANVAS_WIDTH, TREE_CANVAS_HEIGHT);
-frameX = 14;
-requestAnimationFrame(animate);
+sprite.onload = () => {
+    treeSprite.onload = () => {
+        drawInitialFrame();
+    };
+};
+
+if (sprite.complete && treeSprite.complete) {
+    drawInitialFrame();
+} else {
+    sprite.onload = drawInitialFrame;
+    treeSprite.onload = drawInitialFrame;
+}
+
 
 
 // Back arrow
