@@ -256,12 +256,13 @@ button:hover {
 }
 
 @font-face {
-  font-family: gothic-bold;
-  src: url(connections/Franklin\ Gothic\ Bold.ttf);
+  font-family: gothic-medium;
+  src: url(connections/OPTIFranklinGothic-Medium.otf);
 }
 
 .connections-background {
-  font-family: gothic-bold;
+  font-family: gothic-medium;
+  font-weight: bold;
   background-color: white;
   display: flex;
   justify-content: center;
