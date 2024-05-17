@@ -79,9 +79,12 @@ function changePage(imageIndex) {
         window.location.href = '../roof/roof.html';
       }, delay);
       break;
-    // case 1:
-    //   window.location.href = '';
-    //   break;
+    case 2:
+      fadeOutPage()
+      setTimeout(function() {
+        window.location.href = '../infinite-ducks/ducks.html';
+      }, delay);
+      break;
     case 3:
       fadeOutPage()
       setTimeout(function() {

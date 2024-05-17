@@ -56,7 +56,7 @@ function animate(numTimesToSpin, numRotations, spinCounterClockwise) {
             requestAnimationFrame(animate(numTimesToSpin, numRotations, spinCounterClockwise));
         } else {
             isHeads = frameX === 0 ? true : false;
-            document.getElementById('result').textContent = isHeads ? "Heads" : "Tails";
+            document.getElementById('result').textContent = (isHeads ? "Heads" : "Tails") + ". You win!";
             isSpinning = false;
         }
     };
