@@ -1,0 +1,139 @@
+@font-face {
+    font-family: nyt-connections-font;
+    src: url(franklin-normal-600.ttf);
+  }
+
+.connections-background {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#connections-instructions {
+    font-size: 23px;
+    font-family: nyt-connections-font;
+    margin-bottom: 3vmin;
+    margin-top: 20vmin;
+}
+
+#game-container {
+    text-align: center;
+    gap: 1vmin;
+}
+  
+#words-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5vmin;
+}
+  
+.word {
+    background-color: #efefe6;
+    padding: 30px 15px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 8px;
+    font-size: 26px;
+    width: 26vmin;
+    height: 7vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+  
+.word.selected {
+    background-color: #5a594e;
+    color: white;
+}
+  
+#submit-btn {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    border-radius: 35px;
+    padding: 3vmin 5vmin;
+    cursor: pointer;
+    margin-top: 4vmin;
+    margin-bottom: 10vmin;
+    font-family: nyt-connections-font;
+    font-size: 24px;
+}
+
+#submit-btn.disabled {
+    background-color: white;
+    color: #7f7f7f;
+    border: 1px solid #7f7f7f;
+    cursor: not-allowed;
+}
+
+#categories-container {
+    margin-bottom: 1.5vmin;
+}
+  
+.category-box {
+    padding: 30px;
+    height: 7vmin;
+    background-color: green;
+    margin-top: 1.5vmin;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 26px;
+}
+  
+.category-box .category-items {
+    font-family: nyt-connections-font;
+    font-size: 22px;
+}
+
+@keyframes jiggle {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    40% { transform: translateX(-10px); }
+    60% { transform: translateX(10px); }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+  
+.jiggle {
+    animation: jiggle 0.5s ease;
+    background-color: #83837a;
+    color: white;
+}
+
+.popup {
+    position: fixed;
+    top: 3vmin;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    border-radius: 1.5vmin;
+    padding: 3vmin;
+    font-size: 3.5vmin;
+    font-weight: bold;
+    z-index: 1000;
+    visibility: visible;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease-in-out;
+}
+  
+.popup.show {
+    visibility: visible;
+    opacity: 1;
+}
+  
+.popup.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+}

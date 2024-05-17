@@ -48,7 +48,8 @@ function getRandomNumber(min, max) {
 
 window.addEventListener("scroll", function () {
     let { clientHeight, scrollHeight, scrollTop } = document.documentElement;
-    if (clientHeight + scrollTop + 500 >= scrollHeight) {
+    let viewportHeight = window.innerHeight;
+    if (clientHeight + scrollTop + viewportHeight * 0.5 >= scrollHeight) {  // Use viewport height units
         const randomNumDucks = getRandomNumber(8, 25);
         getImage(randomNumDucks, scrollTop + clientHeight);
         ducksFound += randomNumDucks;

@@ -79,6 +79,12 @@ function changePage(imageIndex) {
         window.location.href = '../roof/roof.html';
       }, delay);
       break;
+    case 1:
+      fadeOutPage()
+      setTimeout(function() {
+        window.location.href = '../connections/connections.html';
+      }, delay);
+      break;
     case 2:
       fadeOutPage()
       setTimeout(function() {
