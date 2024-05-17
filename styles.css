@@ -255,8 +255,13 @@ button:hover {
   src: url(connections/franklin-normal-600.ttf);
 }
 
+@font-face {
+  font-family: gothic-bold;
+  src: url(connections/Franklin\ Gothic\ Bold.ttf);
+}
+
 .connections-background {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: gothic-bold;
   background-color: white;
   display: flex;
   justify-content: center;
