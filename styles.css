@@ -211,7 +211,8 @@ button:hover {
   position: relative;
   height: 100vh;
   width: 100vw;
-  touch-action: manipulation;
+  touch-action: pan-y;
+  -ms-touch-action: pan-y;
 }
 
 .ducks-image-container{
