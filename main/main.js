@@ -51,6 +51,20 @@ const handleOnTouchMove = e => {
   }
 }
 
+function onOpen() {
+  nextPercentage = 0;
+  
+  track.dataset.percentage = nextPercentage;
+  
+  track.style.transform = `translate(${nextPercentage}%, -50%)`;
+  
+  for (const image of track.getElementsByClassName("menu-image")) {
+    image.style.objectPosition = `${100 + nextPercentage}% center`
+  }
+}
+
+onOpen();
+
 window.onmousedown = e => handleOnDown(e);
 window.ontouchstart = e => handleOnDown(e.touches[0]);
 window.onmouseup = e => handleOnUp(e);
