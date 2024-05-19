@@ -331,18 +331,30 @@ gridDiv.addEventListener('mouseleave', () => {
     isMouseDown = false;
     clearSelection();
 });
-gridDiv.addEventListener('touchstart', (e) => handleInteractionStart(e.target), { passive: true });
+
+gridDiv.addEventListener('touchstart', (e) => {
+    handleInteractionStart(e.target);
+    e.preventDefault(); 
+}, { passive: false });
+
 gridDiv.addEventListener('touchmove', (e) => {
     const touch = e.touches[0];
     const element = document.elementFromPoint(touch.clientX, touch.clientY);
     if (element && element.closest('.cell')) {
         handleMouseOver(element.closest('.cell'));
     }
-}, { passive: true });
-gridDiv.addEventListener('touchend', handleInteractionEnd);
-gridDiv.addEventListener('touchcancel', () => {
+    e.preventDefault();
+}, { passive: false });
+
+gridDiv.addEventListener('touchend', (e) => {
+    handleInteractionEnd();
+    e.preventDefault();
+});
+
+gridDiv.addEventListener('touchcancel', (e) => {
     isMouseDown = false;
     clearSelection();
+    e.preventDefault(); // Prevent the default touch behavior
 });
 
 const adjustCanvasSize = () => {
