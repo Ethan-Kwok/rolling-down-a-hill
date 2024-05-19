@@ -150,3 +150,5 @@ function fadeOutPage() {
   var fader = document.getElementById('fader');
   fader.classList.add('fade-in');
 }
+
+console.log("Commit #37?");
