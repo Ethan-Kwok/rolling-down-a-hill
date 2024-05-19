@@ -103,8 +103,8 @@ button:hover {
 }
 
 #menu-image-track > .menu-image {
-  width: 400px;
-  height: 600px;
+  width: 350px;
+  height: 490px;
   object-fit: cover;
   object-position: center;
   transform: scale(1);
