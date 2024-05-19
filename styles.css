@@ -423,13 +423,13 @@ button:hover {
   /* height: 26vmin; */
   z-index: 10;
   /* Make it not highlightable */
-  -khtml-user-select: none;
+  /* -khtml-user-select: none;
   -o-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  touch-action: manipulation; */
 }
 
 #stardew-tree-canvas {
@@ -441,13 +441,13 @@ button:hover {
   /* height: 26vmin; */
   z-index: 1;
   /* Make it not highlightable */
-  -khtml-user-select: none;
+  /* -khtml-user-select: none;
   -o-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  touch-action: manipulation; */
 }
 
 #stardew-item-div {
