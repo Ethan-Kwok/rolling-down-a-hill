@@ -428,6 +428,8 @@ button:hover {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 #stardew-tree-canvas {
@@ -444,6 +446,8 @@ button:hover {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 #stardew-item-div {
