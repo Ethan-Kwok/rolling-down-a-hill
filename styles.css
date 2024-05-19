@@ -422,6 +422,12 @@ button:hover {
   width: 26vmin;
   /* height: 26vmin; */
   z-index: 10;
+  /* Make it not highlightable */
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #stardew-tree-canvas {
@@ -432,6 +438,12 @@ button:hover {
   width: 34vmin;
   /* height: 26vmin; */
   z-index: 1;
+  /* Make it not highlightable */
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #stardew-item-div {
