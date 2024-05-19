@@ -409,8 +409,8 @@ button:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  touch-action: none;
-  -ms-touch-action: none;
+  /* touch-action: none;
+  -ms-touch-action: none; */
   /* position: absolute; */
 }
 
