@@ -109,6 +109,12 @@ function changePage(imageIndex) {
         window.location.href = '../coin/coin.html';
       }, delay);
       break;
+    case 6:
+      fadeOutPage()
+      setTimeout(function() {
+        window.location.href = '../strands/strands.html';
+      }, delay);
+      break;
     default:
       alert('Error: no page corresponding to image!');
   }
