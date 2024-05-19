@@ -22,9 +22,9 @@
         
         const password = document.getElementById('password').value;
         const errorMessage = document.getElementById('errorMessage');
-        const correctPassword = 'poop'
+        const correctPassword = 'YUdsc2JBPT0='
 
-        if (password === correctPassword) {
+        if (btoa(btoa(password)) === correctPassword) {
             window.location.href = 'main/main.html';
         } else {
             errorMessage.textContent = 'Incorrect password. Please try again.';
