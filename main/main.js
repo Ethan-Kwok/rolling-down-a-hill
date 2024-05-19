@@ -151,4 +151,4 @@ function fadeOutPage() {
   fader.classList.add('fade-in');
 }
 
-console.log("Commit #37?");
+console.log("Commit #38");
