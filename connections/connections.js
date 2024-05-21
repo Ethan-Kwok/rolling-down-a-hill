@@ -1,5 +1,5 @@
 const words = [
-    "FISH", "ROLL", "LAMB", "DOG",
+    "FISH", "ROLL", "SALMONELLA", "DOG",
     "ARSON", "GASLIGHT", "LAUGH", "HEHEHE",
     "STAR", "STAB", "TOUCH GRASS", "ARM",
     "BRAINIER", "CHEESE", "PSYDUCK", "HYPOTHETICAL"
@@ -9,7 +9,7 @@ const categories = {
     "NOVEMBER 10TH": ["STAR", "HEHEHE", "HYPOTHETICAL", "ROLL"],
     "NOMMABLE": ["PSYDUCK", "CHEESE", "ARM", "DOG"],
     "YOU WOULD \'NEVER\'": ["TOUCH GRASS", "ARSON", "STAB", "GASLIGHT"],
-    "WORDS WITH NAMES INSIDE": ["BRAINIER", "FISH", "LAMB", "LAUGH"]
+    "WORDS WITH NAMES INSIDE": ["BRAINIER", "FISH", "LAUGH", "SALMONELLA"]
 };
   
 let remainingWords = [...words];
