@@ -33,6 +33,8 @@ const gridDiv = document.getElementById('grid');
 const lineCanvas = document.getElementById('lineCanvas');
 const ctx = lineCanvas.getContext('2d');
 
+const themeWordsFoundDiv = document.getElementById('themeWordsFound');
+
 lettersArray.forEach((letter, index) => {
     const cell = document.createElement('div');
     cell.className = 'cell';
@@ -40,6 +42,8 @@ lettersArray.forEach((letter, index) => {
     cell.innerHTML = `<div class="letter">${letter}</div><div class="highlight"></div>`;
     gridDiv.appendChild(cell);
 });
+
+// TODO "functions" are probably better than "const" but idc enough right now :D
 
 const updateCurrWord = () => {
     currWordDiv.textContent = currWord;
@@ -140,6 +144,12 @@ const updateCanvasForFoundWords = () => {
         }
     }
 };
+
+const updateWordsFoundText = () => {
+    themeWordsFoundDiv.innerHTML = `<span class="number">${foundWords.length}</span> of <span class="total">7</span> theme words found.`;
+}
+
+updateWordsFoundText();
 
 const areAllWordsFound = () => {
     return wordList.every(word => foundWords.some(foundWord => foundWord.word === word));
@@ -272,6 +282,7 @@ const handleInteractionEnd = () => {
 
     if (wordList.includes(currWord) && !isWordFound) {
         foundWords.push({ word: currWord, cells: [...selectedCells] });
+        updateWordsFoundText();
 
         // Change highlight color to foundWordsColor and add 'found' class
         selectedCells.forEach((cell, index) => {

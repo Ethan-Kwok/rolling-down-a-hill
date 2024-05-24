@@ -211,6 +211,8 @@ button:hover {
   position: relative;
   height: 100vh;
   width: 100vw;
+  touch-action: pan-y;
+  -ms-touch-action: pan-y;
 }
 
 .ducks-image-container{
@@ -734,4 +736,15 @@ h3 {
   75% {
     transform: translateX(5px);
   }
+}
+
+#themeWordsFound {
+  font-size: 22px;
+  margin-top: 30px;
+  font-weight: normal;
+}
+
+#themeWordsFound .number,
+#themeWordsFound .total {
+  font-weight: bold;
 }
